@@ -1,0 +1,84 @@
+#user-input {
+    overflow: auto;
+    border: 1px solid gray;
+    padding: 10px;
+    height: 30vh;
+    /* max-height: 50vh;
+    flex-grow: 1;
+    max-height: 50vh; */
+}
+
+body {
+    margin: 0;
+}
+
+.interaction {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.wrapper {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+select {
+    height: 25px;
+    padding: 0 6px;
+    line-height: 25px;
+    box-sizing: border-box;
+}
+
+button {
+    height: 30px;
+}
+
+.descriptor {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    width: 80vw; /* 80% of the screen width */
+    height: 50vh; /* 50% of the screen height */
+    gap: 20px; /* Adds space between input and canvas */
+}
+
+.input-box {
+    width: 30%;  /* Left box takes 20% */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between dropdown, heading, and textarea */
+}
+
+.canvas-box {
+    width: 70%; /* Right box takes 80% */
+    height: 50vh; /* Ensure canvas box matches input height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid black;
+}
+
+.highlighted {
+    background-color: orange;
+}
+
+.bad-highlighted {
+    background-color: red;
+    color: white;
+}
+
+span {
+    background-color: white;
+}

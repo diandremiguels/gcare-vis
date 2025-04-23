@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="{% static 'highlight-within-textarea/jquery.highlight-within-textarea.js' %}"></script>
+        <script src="{% static 'elkjs/lib/elk-api.js' %}"></script>
+        <script src="{% static 'dropdown.js' %}"></script>
+        <script src="{% static 'input.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link rel="stylesheet" href="{% static 'highlight-within-textarea/jquery.highlight-within-textarea.css' %}">
+        <title>G-Care Vis</title>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <h1>G-Care Vis</h1>
+            <div class="container">
+                <div class="input-box">
+                    <h3 class="descriptor">Choose a file or enter your own:</h3>
+                    <select id="firstDropdown">
+                        <option value="">Select Filter Type</option>
+                    </select>
+                    <select id="secondDropdown">
+                        <option value="">Select Filter Option</option>
+                    </select>
+                    <select id="thirdDropdown">
+                        <option value="">Select File</option>
+                    </select>
+                    <!-- We use a contenteditable div for text input. Whenever a character is typed, it is wrapped in a span
+                        with its text index stored. We use hover interactions with these spans to trigger highlights. -->
+                    <div id="user-input" contenteditable="true">
+                        Select a file...
+                    </div>
+                    <button id="submitButton">Visualize</button>
+                </div>
+                <svg class="canvas-box" id="graphSVG"></svg>
+            </div>
+        </div>
+    </body>
+</html>
