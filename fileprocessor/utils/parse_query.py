@@ -1,3 +1,6 @@
+# Given a string representing the content of a G-Care query file,
+# returns a JSON file describing the nodes, a JSON file describing the edges,
+# and a JSON file describing the elements in a format that ELK can use to set layouts.
 def parse_graph_with_label_offsets(string_content):
     nodes = []
     edges = []
@@ -73,10 +76,8 @@ def parse_graph_with_label_offsets(string_content):
 
     return nodes, edges, obtain_elk_graph(nodes, edges)
 
-# When we hover over an edge / node, we need to find its id.
-# then, we need to find the corresponding character ranges for the element with the given id
-# after we find the corresponding character range, we reset hwt to only highlight the character range we want.
-
+# Takes a JSON file of nodes and a JSON file of edges and creates
+# a JSON file that ELK can use to set the positions of each element.
 def obtain_elk_graph(nodes, edges):
     elk_graph = {
         "id": "root",

@@ -50,9 +50,9 @@ def categorize_files(base_folder, pattern_regex=r'(\w+)_\d+'):
 
     return dict(folder_map), dict(pattern_map)
 
-def read_file(base_folder):
-    path = os.getcwd().join('fileprocessor/static/' + base_folder)
-    print('selected file was ' + str(path))
+# Given a query file path, returns the string contents of that file. 
+def read_file(filepath):
+    path = os.getcwd().join('fileprocessor/static/' + filepath)
     contents = ''
     with open(path, 'r') as f:
         contents = f.read()
