@@ -9,7 +9,7 @@ from .utils.parse_query import parse_graph_with_label_offsets
 
 # Create your views here.
 def home(request):
-    return render(request, 'fileprocessor/contenteditable.html')
+    return render(request, 'fileprocessor/home.html')
 
 def get_filter_types(request):
     # Example logic to return filter types

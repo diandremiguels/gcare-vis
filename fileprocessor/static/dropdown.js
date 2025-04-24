@@ -127,18 +127,21 @@ $(document).ready(function() {
 
                         // Calculate the width and height of the graph
                         const graphWidth = xMax - xMin;
+                        console.log(graphWidth);
                         const graphHeight = yMax - yMin;
 
                         // Get the size of the SVG
                         const svgWidth = svg.node().getBoundingClientRect().width;
+                        console.log(svgWidth);
                         const svgHeight = svg.node().getBoundingClientRect().height;
 
                         // Calculate the scaling factors for width and height
                         const scaleX = graphWidth > svgWidth ? svgWidth / parseFloat(graphWidth) : 1;
+                        console.log(scaleX);
                         const scaleY = graphHeight > svgHeight ? svgHeight / parseFloat(graphHeight) : 1;
-                        const scale = Math.min(scaleX, scaleY); // Take the smaller scale factor
-
-                        const graphGroup = svg.append("g")
+                        const scale = Math.min(scaleX, scaleY) * 0.8; // Take the smaller scale factor and add a constant factor so it's a little smaller than the box
+                        // const scale = 1
+                        const graphGroup = svg.append("g");
 
                         // Draw edges
                         graphGroup.selectAll("line")
